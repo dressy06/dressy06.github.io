@@ -371,7 +371,7 @@ details p {
 .sound-ui {
   position: fixed;
   top: 24px;
-  right: 24px;
+  right: 44px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -379,9 +379,8 @@ details p {
 }
 
 .sound-text {
-  font-style: italic;
-  font-size: 12px;
-  opacity: 0.7;
+  font-size: 22px;
+  opacity: 0.9;
   transition: opacity 1.2s ease;
 }
 
