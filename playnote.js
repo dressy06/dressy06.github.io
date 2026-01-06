@@ -1,6 +1,3 @@
-// estado global — COMEÇA LIGADO
-let soundEnabled = true;
-
 // contexto de áudio
 const ctx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -12,6 +9,12 @@ const scale = [
 ];
 
 let lastEl = null;
+
+// 🔐 estado persistente
+let soundEnabled =
+  localStorage.getItem("soundEnabled") !== null
+    ? localStorage.getItem("soundEnabled") === "true"
+    : true;
 
 // tocar nota
 function play(freq) {
@@ -63,24 +66,30 @@ document.addEventListener("mouseover", (e) => {
   }
 });
 
-// botão de áudio (APENAS VISUAL + ESTADO)
+// UI de áudio
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("audioControl");
+  const hint = document.getElementById("soundHint");
   if (!btn) return;
 
-  // estado inicial correto
-  btn.classList.remove("muted");
-  document.body.style.cursor = "crosshair";
+  // 🎛 estado inicial vindo do localStorage
+  btn.classList.toggle("muted", !soundEnabled);
+  document.body.style.cursor = soundEnabled ? "crosshair" : "";
 
   btn.addEventListener("click", () => {
     soundEnabled = !soundEnabled;
 
-    if (soundEnabled) {
-      btn.classList.remove("muted");
-      document.body.style.cursor = "crosshair";
-    } else {
-      btn.classList.add("muted");
-      document.body.style.cursor = "";
-    }
+    // salva escolha
+    localStorage.setItem("soundEnabled", soundEnabled);
+
+    btn.classList.toggle("muted", !soundEnabled);
+    document.body.style.cursor = soundEnabled ? "crosshair" : "";
+
+    if (hint) hint.classList.add("hidden");
   });
+
+  // fallback
+  setTimeout(() => {
+    if (hint) hint.classList.add("hidden");
+  }, 3000);
 });
