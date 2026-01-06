@@ -367,3 +367,51 @@ details p {
     user-select: none;
     transition: opacity 1s linear;
 }
+
+.sound-ui {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 999;
+}
+
+.sound-text {
+  font-style: italic;
+  font-size: 12px;
+  opacity: 0.7;
+  transition: opacity 1.2s ease;
+}
+
+.sound-text.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.audio-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: black;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.audio-btn:hover {
+  opacity: 1;
+}
+
+.icon-mute {
+  display: none;
+}
+
+.audio-btn.muted .icon-sound {
+  display: none;
+}
+
+.audio-btn.muted .icon-mute {
+  display: inline;
+}
