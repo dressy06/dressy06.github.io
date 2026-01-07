@@ -1,7 +1,22 @@
-// contexto de áudio
+/*     ________________________
+     /           ___ ___       '.
+     |\ .-------|:::/:::|--------;
+     | |        |:::|:::|        |
+     |\|_  ___ _|:::/:::| __ ____|
+     |    __  ___""" """_ ____ __`\
+     | |\##\\###\\##\\###\\##\\### \
+     \ \ \\\\\\\\\\\\\\\\\\\\\\\\\\ \
+     |\ \||||||||||||||||||||||||||_|
+     | | ;"""""""""""""""""""""""";"|
+     | | |"""""".----------.""""""| |
+     | | |     |\           \  |  | |
+     | | |-----|\\___________\-|  | |
+ jgs | | |     | |---------- |  \ | |
+     `\| |     | |         | |   `| |
+       \_|       |           |    `\|*/
+       
 const ctx = new (window.AudioContext || window.webkitAudioContext)();
 
-// escala
 const scale = [
   523.25, 587.33, 659.25,
   783.99, 880,
@@ -10,13 +25,11 @@ const scale = [
 
 let lastEl = null;
 
-// 🔐 estado persistente
 let soundEnabled =
   localStorage.getItem("soundEnabled") !== null
     ? localStorage.getItem("soundEnabled") === "true"
     : true;
 
-// tocar nota
 function play(freq) {
   const o = ctx.createOscillator();
   const g = ctx.createGain();
@@ -41,7 +54,6 @@ function play(freq) {
   o.stop(ctx.currentTime + 0.4);
 }
 
-// acordar áudio no primeiro gesto
 document.addEventListener(
   "mouseover",
   () => {
@@ -50,7 +62,6 @@ document.addEventListener(
   { once: true }
 );
 
-// hover sonoro
 document.addEventListener("mouseover", (e) => {
   if (!soundEnabled) return;
 
@@ -66,20 +77,17 @@ document.addEventListener("mouseover", (e) => {
   }
 });
 
-// UI de áudio
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("audioControl");
   const hint = document.getElementById("soundHint");
   if (!btn) return;
 
-  // 🎛 estado inicial vindo do localStorage
   btn.classList.toggle("muted", !soundEnabled);
   document.body.style.cursor = soundEnabled ? "crosshair" : "";
 
   btn.addEventListener("click", () => {
     soundEnabled = !soundEnabled;
 
-    // salva escolha
     localStorage.setItem("soundEnabled", soundEnabled);
 
     btn.classList.toggle("muted", !soundEnabled);
@@ -88,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hint) hint.classList.add("hidden");
   });
 
-  // fallback
   setTimeout(() => {
     if (hint) hint.classList.add("hidden");
   }, 3000);
