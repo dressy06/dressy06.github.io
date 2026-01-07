@@ -1,0 +1,166 @@
+<header>
+  <div class="header-container">
+    <div class="menu-selection" id="logoBox">
+      <img src="blushlogo.png" alt="Blush Logo" id="blushLogo">
+      <span class="handle top-left"></span>
+      <span class="handle top-right"></span>
+      <span class="handle bottom-left"></span>
+      <span class="handle bottom-right"></span>
+    </div>
+  </div>
+</header>
+
+<!-- GUIDES -->
+<div class="guide horizontal" id="guideLeft"></div>
+<div class="guide horizontal" id="guideRight"></div>
+<div class="guide vertical" id="guideTop"></div>
+<div class="guide vertical" id="guideBottom"></div>
+
+<style>
+body {
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  background:#fff;
+}
+
+/* BOX COM LOGO */
+.menu-selection {
+  position: absolute;
+  border:1px solid #000;
+  background: rgba(255,255,255,0.9);
+  aspect-ratio: 551.52 / 195.39;
+  width: 30vw; /* <--- menor que antes (era 40vw) */
+  max-width: 400px; /* <--- limita no desktop */
+  max-height: 30vh; /* para garantir proporção */
+  cursor: grab;
+  pointer-events:auto;
+  z-index: 100;
+}
+
+
+.menu-selection.dragging { cursor: grabbing; }
+
+.menu-selection img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* garante que a logo nunca saia da box */
+  pointer-events:none;
+}
+
+/* HANDLES */
+.handle {
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:#fff;
+  border:1px solid #c5abba;
+  z-index:101;
+}
+.handle.top-left { top:-4px; left:-4px; }
+.handle.top-right { top:-4px; right:-4px; }
+.handle.bottom-left { bottom:-4px; left:-4px; }
+.handle.bottom-right { bottom:-4px; right:-4px; }
+
+/* GUIDES PONTILHADAS */
+.guide {
+  position: fixed;
+  background: none;
+  z-index: 50;
+}
+.guide.horizontal { height:1px; width:100%; border-top:1px dotted #c5abba; }
+.guide.vertical { width:1px; height:100%; border-left:1px dotted #c5abba; }
+</style>
+
+<script>
+const box = document.getElementById('logoBox');
+const guideLeft = document.getElementById('guideLeft');
+const guideRight = document.getElementById('guideRight');
+const guideTop = document.getElementById('guideTop');
+const guideBottom = document.getElementById('guideBottom');
+
+let offsetX, offsetY, dragging=false;
+
+// Mantém box dentro da tela
+function clampBox(left, top, width, height) {
+  const maxLeft = window.innerWidth - width;
+  const maxTop = window.innerHeight - height;
+  return { left: Math.max(0, Math.min(left,maxLeft)), top: Math.max(0, Math.min(top,maxTop)) };
+}
+
+// Atualiza guides partindo dos lados da caixa até a borda da tela
+function updateGuides() {
+  const rect = box.getBoundingClientRect();
+
+  guideLeft.style.left = '0px';
+  guideLeft.style.width = rect.left + 'px';
+  guideLeft.style.top = (rect.top + rect.height/2) + 'px';
+
+  guideRight.style.left = rect.right + 'px';
+  guideRight.style.width = (window.innerWidth - rect.right) + 'px';
+  guideRight.style.top = (rect.top + rect.height/2) + 'px';
+
+  guideTop.style.top = '0px';
+  guideTop.style.height = rect.top + 'px';
+  guideTop.style.left = (rect.left + rect.width/2) + 'px';
+
+  guideBottom.style.top = rect.bottom + 'px';
+  guideBottom.style.height = (window.innerHeight - rect.bottom) + 'px';
+  guideBottom.style.left = (rect.left + rect.width/2) + 'px';
+}
+
+// ===== DRAG MOUSE =====
+box.addEventListener('mousedown', e=>{
+  dragging=true;
+  box.classList.add('dragging');
+  offsetX = e.clientX - box.offsetLeft;
+  offsetY = e.clientY - box.offsetTop;
+});
+document.addEventListener('mousemove', e=>{
+  if(!dragging) return;
+  const {left, top} = clampBox(e.clientX-offsetX, e.clientY-offsetY, box.offsetWidth, box.offsetHeight);
+  box.style.left = left+'px';
+  box.style.top = top+'px';
+  updateGuides();
+});
+document.addEventListener('mouseup', e=>{
+  dragging=false;
+  box.classList.remove('dragging');
+});
+
+// ===== DRAG TOUCH =====
+box.addEventListener('touchstart', e=>{
+  dragging=true;
+  box.classList.add('dragging');
+  const touch=e.touches[0];
+  offsetX = touch.clientX - box.offsetLeft;
+  offsetY = touch.clientY - box.offsetTop;
+});
+document.addEventListener('touchmove', e=>{
+  if(!dragging) return;
+  const touch=e.touches[0];
+  const {left, top} = clampBox(touch.clientX-offsetX, touch.clientY-offsetY, box.offsetWidth, box.offsetHeight);
+  box.style.left = left+'px';
+  box.style.top = top+'px';
+  updateGuides();
+});
+document.addEventListener('touchend', e=>{
+  dragging=false;
+  box.classList.remove('dragging');
+});
+
+// CENTRALIZA A BOX
+function centerBox() {
+  const width = Math.min(window.innerWidth*0.4, window.innerWidth*0.9);
+  box.style.width = width+'px';
+  const height = width / (551.52 / 195.39);
+  const top = (window.innerHeight - height)/2;
+  const left = (window.innerWidth - width)/2;
+  box.style.top = top+'px';
+  box.style.left = left+'px';
+  updateGuides();
+}
+
+window.addEventListener('resize', centerBox);
+centerBox();
+</script>
