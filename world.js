@@ -1,3 +1,27 @@
+const images = [
+  {
+    src: "obras world/quase-oraculo.png",
+    caption: "volvelle quase-oráculo",
+    width: 380
+  },
+  {
+    src: "world/perola.jpg",
+    caption: "pérolas",
+    width: 280
+  },
+  {
+    src: "world/flor.jpg",
+    caption: "flor prensada",
+    width: 280
+  }
+];
+
+/* preload */
+images.forEach(item => {
+  const img = new Image();
+  img.src = item.src;
+});
+
 const worldToggle = document.getElementById("world-toggle");
 const worldLayer = document.getElementById("world-layer");
 
