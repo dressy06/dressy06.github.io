@@ -6,15 +6,18 @@ let worldOpen = false;
 const images = [
   {
     src: "obras world/quase-oraculo.png",
-    caption: "volvelle quase-oráculo"
+    caption: "volvelle quase-oráculo",
+    width: 380
   },
   {
     src: "world/perola.jpg",
-    caption: "pérolas"
+    caption: "pérolas",
+    width: 280
   },
   {
     src: "world/flor.jpg",
-    caption: "flor prensada"
+    caption: "flor prensada",
+    width: 280
   }
 ];
 
@@ -24,15 +27,17 @@ function createWorld() {
 
   images.forEach((item, index) => {
 
-    const wrapper = document.createElement("div");
+  const wrapper = document.createElement("div");
 
-    wrapper.classList.add("world-item");
+  wrapper.classList.add("world-item");
 
-    wrapper.style.left =
-      `${5 + Math.random() * 80}%`;
+  wrapper.style.width = item.width + "px";
 
-    wrapper.style.top =
-      `${5 + Math.random() * 75}%`;
+  wrapper.style.left =
+    `${5 + Math.random() * 80}%`;
+
+  wrapper.style.top =
+    `${5 + Math.random() * 75}%`;
 
     wrapper.style.transform =
       `rotate(${Math.random() * 16 - 8}deg)`;
