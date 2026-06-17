@@ -10,7 +10,7 @@ const images = [
     width: 280
   },
   {
-    src: "obras world/StillWaterWithTeeth.webp",
+    src: "obras world/stillwaterwithteeth.webp",
     caption: "still water with teeth (2025)",
     width: 280
   },
@@ -232,14 +232,14 @@ worldToggle.addEventListener("click", () => {
     createWorld();
 
     worldToggle.textContent =
-      "✦ close world";
+      "✦ close world ✦";
 
   } else {
 
     clearWorld();
 
     worldToggle.textContent =
-      "✦ dressa's world";
+      "✦ dressa's world ✦";
 
   }
 
