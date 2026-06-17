@@ -1,6 +1,6 @@
 const images = [
   {
-    src: "obras world/quase-oraculo.png",
+    src: "obras world/volvelle.png",
     caption: "volvelle quase-oráculo (2026)",
     width: 380
   },
