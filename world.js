@@ -197,7 +197,7 @@ function createWorld() {
 
     setTimeout(() => {
       wrapper.classList.add("visible");
-    }, index * 30);
+    }, index * 20);
 
   });
 
