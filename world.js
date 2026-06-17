@@ -1,101 +1,96 @@
 const images = [
   {
-    src: "obras world/quase-oraculo.webp",
+    src: "obras world/quase-oraculo.png",
     caption: "volvelle quase-oráculo (2026)",
     width: 380
   },
   {
-    src: "obras world/stargirl.webp",
+    src: "obras world/stargirl.png",
     caption: "airbrush stargirl (2025)",
     width: 280
   },
   {
-    src: "obras world/stillwaterwithteeth.webp",
+    src: "obras world/stillwaterwithteeth.png",
     caption: "still water with teeth (2025)",
     width: 280
   },
   {
-    src: "obras world/grab.webp",
+    src: "obras world/grab.png",
     caption: "grab / aluminum cursor sculpture series (2025)",
     width: 240
   },
   {
-    src: "obras world/click.webp",
+    src: "obras world/click.png",
     caption: "click / aluminum cursor sculpture series (2025)",
     width: 240
   },
   {
-    src: "obras world/pointer.webp",
+    src: "obras world/pointer.png",
     caption: "pointer / aluminum cursor sculpture series (2025)",
     width: 240
   },
   {
-    src: "obras world/move.webp",
+    src: "obras world/move.png",
     caption: "move / aluminum cursor sculpture series (2025)",
     width: 240
   },
   {
-    src: "obras world/send.webp",
+    src: "obras world/send.png",
     caption: "send / aluminum cursor sculpture series (2025)",
     width: 240
   },
   {
-    src: "obras world/unavailable.webp",
+    src: "obras world/unavailable.png",
     caption: "unavailable / aluminum cursor sculpture series (2025)",
     width: 240
   },
   {
-    src: "obras world/like.webp",
+    src: "obras world/like.png",
     caption: "like / aluminum cursor sculpture series (2025)",
     width: 240
   },
   {
-    src: "obras world/aluminumfoil.webp",
+    src: "obras world/aluminumfoil.png",
     caption: "aluminum foil beauty (2025)",
     width: 320
   },
   {
-    src: "obras world/jessica.webp",
-    caption: "jéssica (2025)",
-    width: 260
-  },
-  {
-    src: "obras world/a-idiota.webp",
+    src: "obras world/a-idiota.png",
     caption: "the idiot (2022)",
     width: 260
   },
   {
-    src: "obras world/museugraficovisual.webp",
+    src: "obras world/museugraficovisual.png",
     caption: "museu gráfico visual + dressa (2023)",
     width: 340
   },
   {
-    src: "obras world/sketchbook.webp",
+    src: "obras world/sketchbook.png",
     caption: "sketchbook (2024)",
     width: 260
   },
   {
-    src: "obras world/aguavivaworld.webp",
+    src: "obras world/aguavivaworld.png",
     caption: "água viva (2025)",
     width: 320
   },
   {
-    src: "obras world/tatakizomepart1.webp",
+    src: "obras world/tatakizomepart1.png",
     caption: "tatakizome i (2025)",
     width: 280
   },
   {
-    src: "obras world/tatakizomepart2.webp",
+    src: "obras world/tatakizomepart2.png",
     caption: "tatakizome ii (2025)",
     width: 280
   },
   {
-    src: "obras world/wildgeese.webp",
+    src: "obras world/wildgeese.png",
     caption: "wild geese (2025)",
     width: 320
   },
   {
-    src: "obras world/swordplay.webp",
+    src: "obras world/swordplay.png",
     caption: "delicate in every way but one (the swordplay) (2025)",
     width: 280
   }
