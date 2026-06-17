@@ -10,8 +10,8 @@ const images = [
     width: 280
   },
   {
-    src: "world/flor.jpg",
-    caption: "flor prensada",
+    src: "obras world/stillwaterwithteeth.png",
+    caption: "still water with teeth",
     width: 280
   }
 ];
