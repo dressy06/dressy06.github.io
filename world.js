@@ -55,7 +55,7 @@ const images = [
     width: 320
   },
   {
-    src: "obras world/a-idiota.png",
+    src: "obras world/theidiot.png",
     caption: "the idiot (2022)",
     width: 260
   },
@@ -70,7 +70,7 @@ const images = [
     width: 260
   },
   {
-    src: "obras world/aguavivaworld.png",
+    src: "obras world/aguaviva.png",
     caption: "água viva (2025)",
     width: 320
   },
