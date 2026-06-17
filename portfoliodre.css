@@ -386,3 +386,11 @@ li {
     display: inline-block;
     padding: 2px 4px;
 }
+/*draggable*/
+.world-item {
+  position: fixed;
+  cursor: grab;
+}
+.world-item:active {
+  cursor: grabbing;
+}

@@ -27,6 +27,65 @@ const worldLayer = document.getElementById("world-layer");
 
 let worldOpen = false;
 
+function makeDraggable(el) {
+  let isDragging = false,
+    startX = 0,
+    startY = 0,
+    offsetX = 0,
+    offsetY = 0;
+
+  const getClient = (e) => (e.touches ? e.touches[0] : e);
+
+  const onDown = (e) => {
+    const c = getClient(e);
+
+    isDragging = false;
+    startX = c.clientX;
+    startY = c.clientY;
+
+    const r = el.getBoundingClientRect();
+    offsetX = startX - r.left;
+    offsetY = startY - r.top;
+
+    el.style.transition = "none";
+    el.style.zIndex = 9999;
+
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("touchmove", onMove, { passive: false });
+    document.addEventListener("mouseup", onUp);
+    document.addEventListener("touchend", onUp);
+
+    e.preventDefault();
+  };
+
+  const onMove = (e) => {
+    const c = getClient(e);
+
+    const dx = c.clientX - startX;
+    const dy = c.clientY - startY;
+
+    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) isDragging = true;
+
+    if (isDragging) {
+      el.style.left = c.clientX - offsetX + "px";
+      el.style.top = c.clientY - offsetY + "px";
+      e.preventDefault();
+    }
+  };
+
+  const onUp = () => {
+    el.style.zIndex = "";
+
+    document.removeEventListener("mousemove", onMove);
+    document.removeEventListener("touchmove", onMove);
+    document.removeEventListener("mouseup", onUp);
+    document.removeEventListener("touchend", onUp);
+  };
+
+  el.addEventListener("mousedown", onDown);
+  el.addEventListener("touchstart", onDown, { passive: false });
+}
+
 function createWorld() {
 
   worldLayer.innerHTML = "";
@@ -54,6 +113,7 @@ function createWorld() {
     `;
 
     worldLayer.appendChild(wrapper);
+    makeDraggable(wrapper);
 
     setTimeout(() => {
       wrapper.classList.add("visible");
