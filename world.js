@@ -1,6 +1,6 @@
 const images = [
   {
-    src: "obras world/volvelle.png",
+    src: "obras world/quase-oraculo.png",
     caption: "volvelle quase-oráculo (2026)",
     width: 380
   },
@@ -10,7 +10,7 @@ const images = [
     width: 280
   },
   {
-    src: "obras world/stillwaterwithteeth.png",
+    src: "obras world/StillWaterWithTeeth.png",
     caption: "still water with teeth (2025)",
     width: 280
   },
