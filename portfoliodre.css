@@ -314,7 +314,6 @@ li {
   }
 }
 
-/* dressa's world */
 
 /* dressa's world */
 
@@ -395,4 +394,14 @@ li {
 
     display: inline-block;
     padding: 2px 4px;
-} 
+}
+
+@font-face {
+  font-family: "Garamondt Italic";
+  src: url("Garamondt-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.header .name {
+  font-family: "Garamondt Italic", serif;
+}
