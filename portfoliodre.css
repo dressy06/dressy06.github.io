@@ -349,20 +349,16 @@ li {
 #world-layer {
     position: fixed;
     inset: 0;
-    pointer-events: none;
+    pointer-events: auto;
     z-index: 20;
 }
 
 .world-item {
-    position: fixed;
-
-    width: 180px;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+  position: fixed;
+  width: 180px;
+  opacity: 0;
+  cursor: grab;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .world-item.visible {
@@ -387,10 +383,6 @@ li {
     padding: 2px 4px;
 }
 /*draggable*/
-.world-item {
-  position: fixed;
-  cursor: grab;
-}
 .world-item:active {
   cursor: grabbing;
 }
