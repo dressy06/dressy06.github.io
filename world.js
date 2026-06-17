@@ -10,7 +10,7 @@ const images = [
     width: 280
   },
   {
-    src: "obras world/stillwaterwithteeth.png",
+    src: "obras world/still-water-with-teeth.png",
     caption: "still water with teeth",
     width: 280
   }
