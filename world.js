@@ -1,17 +1,102 @@
 const images = [
   {
-    src: "obras world/quase-oraculo.png",
-    caption: "volvelle quase-oráculo",
+    src: "obras world/quase-oraculo.webp",
+    caption: "volvelle quase-oráculo (2026)",
     width: 380
   },
   {
-    src: "obras world/stargirl.png",
-    caption: "airbrush stargirl",
+    src: "obras world/stargirl.webp",
+    caption: "airbrush stargirl (2025)",
     width: 280
   },
   {
-    src: "obras world/still-water-with-teeth.png",
-    caption: "still water with teeth",
+    src: "obras world/StillWaterWithTeeth.webp",
+    caption: "still water with teeth (2025)",
+    width: 280
+  },
+  {
+    src: "obras world/grab.webp",
+    caption: "grab / aluminum cursor sculpture series (2025)",
+    width: 240
+  },
+  {
+    src: "obras world/click.webp",
+    caption: "click / aluminum cursor sculpture series (2025)",
+    width: 240
+  },
+  {
+    src: "obras world/pointer.webp",
+    caption: "pointer / aluminum cursor sculpture series (2025)",
+    width: 240
+  },
+  {
+    src: "obras world/move.webp",
+    caption: "move / aluminum cursor sculpture series (2025)",
+    width: 240
+  },
+  {
+    src: "obras world/send.webp",
+    caption: "send / aluminum cursor sculpture series (2025)",
+    width: 240
+  },
+  {
+    src: "obras world/unavailable.webp",
+    caption: "unavailable / aluminum cursor sculpture series (2025)",
+    width: 240
+  },
+  {
+    src: "obras world/like.webp",
+    caption: "like / aluminum cursor sculpture series (2025)",
+    width: 240
+  },
+  {
+    src: "obras world/aluminumfoil.webp",
+    caption: "aluminum foil beauty (2025)",
+    width: 320
+  },
+  {
+    src: "obras world/jessica.webp",
+    caption: "jéssica (2025)",
+    width: 260
+  },
+  {
+    src: "obras world/a-idiota.webp",
+    caption: "the idiot (2022)",
+    width: 260
+  },
+  {
+    src: "obras world/museugraficovisual.webp",
+    caption: "museu gráfico visual + dressa (2023)",
+    width: 340
+  },
+  {
+    src: "obras world/sketchbook.webp",
+    caption: "sketchbook (2024)",
+    width: 260
+  },
+  {
+    src: "obras world/aguavivaworld.webp",
+    caption: "água viva (2025)",
+    width: 320
+  },
+  {
+    src: "obras world/tatakizomepart1.webp",
+    caption: "tatakizome i (2025)",
+    width: 280
+  },
+  {
+    src: "obras world/tatakizomepart2.webp",
+    caption: "tatakizome ii (2025)",
+    width: 280
+  },
+  {
+    src: "obras world/wildgeese.webp",
+    caption: "wild geese (2025)",
+    width: 320
+  },
+  {
+    src: "obras world/swordplay.webp",
+    caption: "delicate in every way but one (the swordplay) (2025)",
     width: 280
   }
 ];
