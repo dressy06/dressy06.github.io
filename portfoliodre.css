@@ -345,10 +345,10 @@ li {
 /*disposicao na tela*/
 
 #world-layer {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 20;
+  position: fixed;
+  inset: 0;
+  pointer-events: auto;
+  z-index: 20;
 }
 
 .world-item {
@@ -357,6 +357,11 @@ li {
   opacity: 0;
   cursor: grab;
   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.world-item {
+  pointer-events: auto;
+  cursor: grab;
 }
 
 .world-item.visible {
