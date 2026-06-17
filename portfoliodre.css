@@ -315,10 +315,12 @@ li {
 }
 
 /* dressa's world */
-/*botao*/
+
+/* dressa's world */
+
+/* botão */
 #world-toggle {
     position: fixed;
-
     bottom: 70px;
     right: 140px;
 
@@ -342,38 +344,47 @@ li {
     opacity: 0.8;
 }
 
-/*disposicao na tela*/
-
+/* layer geral (não bloqueia site) */
 #world-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: auto;
-  z-index: 20;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
 }
 
+/* item (único bloco correto) */
 .world-item {
-  position: fixed;
-  width: 180px;
-  opacity: 0;
-  cursor: grab;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+    position: fixed;
+    width: 180px;
+
+    opacity: 0;
+
+    cursor: grab;
+
+    pointer-events: auto;
+
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.world-item {
-  pointer-events: auto;
-  cursor: grab;
+.world-item:active {
+    cursor: grabbing;
 }
 
 .world-item.visible {
     opacity: 1;
 }
 
+/* imagem */
 .world-item img {
     width: 100%;
     height: auto;
     display: block;
+
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
+/* legenda */
 .world-caption {
     margin-top: 4px;
     font-size: 11px;
@@ -384,18 +395,4 @@ li {
 
     display: inline-block;
     padding: 2px 4px;
-}
-/*draggable*/
-.world-item:active {
-  cursor: grabbing;
-}
-
-@font-face {
-  font-family: "Garamondt Italic";
-  src: url("Garamondt-Italic.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-.header .name {
-  font-family: "Garamondt Italic", serif;
-}
+} 
