@@ -5,8 +5,8 @@ const images = [
     width: 380
   },
   {
-    src: "world/perola.jpg",
-    caption: "pérolas",
+    src: "obras world/stargirl.png",
+    caption: "airbrush stargirl",
     width: 280
   },
   {
@@ -26,24 +26,6 @@ const worldToggle = document.getElementById("world-toggle");
 const worldLayer = document.getElementById("world-layer");
 
 let worldOpen = false;
-
-const images = [
-  {
-    src: "obras world/quase-oraculo.png",
-    caption: "volvelle quase-oráculo",
-    width: 380
-  },
-  {
-    src: "world/perola.jpg",
-    caption: "pérolas",
-    width: 280
-  },
-  {
-    src: "world/flor.jpg",
-    caption: "flor prensada",
-    width: 280
-  }
-];
 
 function createWorld() {
 
