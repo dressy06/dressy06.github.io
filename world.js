@@ -9,6 +9,11 @@ const images = [
     caption: "aluminum chair (2025)",
     width: 380
   },
+     {
+    src: "obras world/bleuets.png",
+    caption: "bleuets lettering (2026)",
+    width: 380
+  },
     {
     src: "obras world/headpiece.png",
     caption: "headpiece (2024)",
