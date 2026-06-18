@@ -185,7 +185,9 @@ function createWorld() {
 
   worldLayer.innerHTML = "";
 
-  images.forEach((item, index) => {
+  const shuffledImages = [...images].sort(() => Math.random() - 0.5);
+
+shuffledImages.forEach((item, index) => {
 
   const wrapper = document.createElement("div");
 
