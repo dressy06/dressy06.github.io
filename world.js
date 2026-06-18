@@ -193,6 +193,8 @@ shuffledImages.forEach((item, index) => {
 
   wrapper.classList.add("world-item");
 
+  const isMobile = window.innerWidth < 768;
+
   wrapper.style.width = item.width + "px";
 
   wrapper.style.left =
