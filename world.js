@@ -4,6 +4,16 @@ const images = [
     caption: "volvelle quase-oráculo (2026)",
     width: 380
   },
+    {
+    src: "obras world/chair.png",
+    caption: "aluminum chair (2025)",
+    width: 380
+  },
+    {
+    src: "obras world/headpiece.png",
+    caption: "headpiece (2024)",
+    width: 380
+  },
   {
     src: "obras world/stargirl.png",
     caption: "airbrush stargirl (2025)",
@@ -197,7 +207,7 @@ function createWorld() {
 
     setTimeout(() => {
       wrapper.classList.add("visible");
-    }, index * 20);
+    }, index * 15);
 
   });
 
